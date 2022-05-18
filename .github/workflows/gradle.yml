@@ -32,7 +32,7 @@ jobs:
       uses: ./
       id: run-api-tests
       with:
-        token: dummy
+        token: dummyy
         collection: "./NewmanCli/Newman_collection.json"
         reporters: cli
     
