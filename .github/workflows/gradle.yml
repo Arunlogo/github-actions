@@ -46,13 +46,13 @@ jobs:
         run: docker-compose up -d
       - name: Check container is live
         run: docker ps
-      - name: Show Newman resultss
+      - name: Show Newman results
         run: |
           sleep 25s
           docker logs newman
       - name: Check Newman Exit Code
         run: |
-          if [ $(docker inspect newman --format='{{.State.ExitCode}}') -ne 0 ] 
+          if [ $(docker newman --format='{{.State.ExitCode}}') -ne 0 ] 
           then
             echo "Newman failed."
             exit 1
