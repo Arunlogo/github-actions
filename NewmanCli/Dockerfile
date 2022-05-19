@@ -6,3 +6,4 @@ WORKDIR $APP_HOME
 
 ADD . $APP_HOME
 RUN chmod +x $APP_HOME/entrypoint.sh
+ENTRYPOINT $APP_HOME/entrypoint.sh
