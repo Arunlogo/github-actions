@@ -44,5 +44,5 @@ jobs:
         run: docker-compose build
       - name: Run the docker-compose stack
         run: docker-compose up -d
-      - name: Check container
+      - name: Check container is live
         run: docker ps
