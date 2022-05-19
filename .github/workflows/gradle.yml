@@ -53,3 +53,6 @@ jobs:
           
       - name: Images
         run: docker images
+        
+      - name: Run the docker-compose stack
+        run: docker-compose up -d
