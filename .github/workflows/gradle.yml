@@ -27,5 +27,9 @@ jobs:
   deployment:
    runs-on: ubuntu-latest
    steps:
+    - name: Load path
+      run: pwd
+    - name: Load content
+      run: ls -lta
     - name: Build the docker-image
       run: docker build --tag githubactions .
