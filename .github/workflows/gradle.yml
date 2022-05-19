@@ -28,6 +28,8 @@ jobs:
    runs-on: ubuntu-latest
    steps:
     - name: Load path
+      run: cd ..
+    - name: Load path
       run: pwd
     - name: Load content
       run: ls -lta
