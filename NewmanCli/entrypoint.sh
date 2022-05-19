@@ -3,4 +3,4 @@
 
 sleep 30s; 
 
-newman run postman_collection.json;
+newman run Newman_collection.json;
