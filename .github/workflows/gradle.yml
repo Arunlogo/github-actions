@@ -46,7 +46,7 @@ jobs:
         run: docker-compose up -d
       - name: Check container is live
         run: docker ps
-      - name: Show Newman results
+      - name: Show Newman resultss
         run: |
           sleep 25s
           docker logs newman
