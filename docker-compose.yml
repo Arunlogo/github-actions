@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+
+  
+  paymentgateway:
+    image: githubaction
+    container_name: githubaction
+    ports:
+      - 8080:8080
+  
+
+    
+  
+   
