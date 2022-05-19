@@ -13,6 +13,7 @@ services:
     build: ./NewmanCli
     image: newman
     container_name: newman
+    entrypoint: ["/entrypoint.sh"]
     network_mode: "host"
    
     
