@@ -47,7 +47,7 @@ jobs:
           docker logs newman
       - name: Check Newman Exit Code
         run: |
-          if [ $(docker newman --format='{{.State.ExitCode}}') -ne 0 ] 
+          if [ $(docker inspect newman --format='{{.State.ExitCode}}') -ne 0 ] 
           then
             echo "Newman failed."
             exit 1
