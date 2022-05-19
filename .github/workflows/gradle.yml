@@ -24,14 +24,35 @@ jobs:
       with:
         arguments: build
   
-  deployment:
-   runs-on: ubuntu-latest
-   steps:
-    - name: Load path
-      run: cd ..
-    - name: Load path
-      run: pwd
-    - name: Load content
-      run: ls -lta
-    - name: Build the docker-image
-      run: docker build --tag githubactions ./
+
+  build-docker-image:
+    name: Build Docker image
+    # run only when code is compiling and tests are passing
+    runs-on: ubuntu-latest
+
+    # steps to perform in job
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # setup Docker buld action
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1
+
+      
+      
+      
+      - name: Build image
+        uses: docker/build-push-action@v2
+        with:
+          # relative path to the place where source code with Dockerfile is located
+          context: ./
+          # Note: tags has to be all lower-case
+          tags: |
+            githubaction
+          # build on feature branches, push only on main branch
+          push: ${{ github.ref == 'refs/heads/main' }}
+
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
