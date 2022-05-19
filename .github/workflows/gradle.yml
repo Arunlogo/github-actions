@@ -32,4 +32,4 @@ jobs:
     - name: Load content
       run: ls -lta
     - name: Build the docker-image
-      run: docker build --tag githubactions .
+      run: docker build --tag githubactions ./
