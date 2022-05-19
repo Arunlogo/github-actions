@@ -28,4 +28,4 @@ jobs:
    runs-on: ubuntu-latest
    steps:
     - name: Build the docker-image
-      run: docker build --tag githubactions -f ./NewmanCli
+      run: docker build --tag githubactions ./
