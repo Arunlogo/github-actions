@@ -24,18 +24,8 @@ jobs:
       with:
         arguments: build
   
-  test:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Run Newman
-      uses: ./
-      id: run-api-tests
-      with:
-        token: dummytoken
-        collection: "./NewmanCli/Newman_collection.json"
-        reporters: cli
-    
-    - name: Export Summary from Outputs
-      run: |
-        echo ${{ steps.run-api-tests.outputs.summary }}
+  deployment:
+   runs-on: ubuntu-latest
+   steps:
+    - name: Build the docker-image
+      run: docker build --tag githubactions .
