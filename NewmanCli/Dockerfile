@@ -1,3 +1,3 @@
 FROM postman/newman:latest
-ADD .
+COPY entrypoint.sh entrypoint.sh
 RUN chmod +x /entrypoint.sh
