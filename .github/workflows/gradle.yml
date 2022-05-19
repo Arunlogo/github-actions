@@ -50,8 +50,6 @@ jobs:
           context: ./
           # Note: tags has to be all lower-case
           tags: githubaction
-
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
+          
       - name: Images
         run: docker images
