@@ -12,8 +12,9 @@ services:
   newman:
     build: ./NewmanCli
     image: newman
-    container_name: newman
     entrypoint: ["/home/hello_django/entrypoint.sh"]
+    container_name: newman
+    
    
     
   
