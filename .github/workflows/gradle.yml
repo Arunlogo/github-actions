@@ -40,7 +40,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
+      - name: show ls
+        run: ls -lta
       - name: Build the docker-compose stack
         run: docker-compose build
       - name: Run the docker-compose stack
