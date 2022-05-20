@@ -41,6 +41,10 @@ jobs:
         run: docker-compose up -d
       - name: Check container is live
         run: docker ps
+      - name: Show network list
+        run: docker network ls
+      - name: Inspect network
+        run: docker network inspect github-actions_default
       - name: Show Newman results
         run: |
           sleep 10s
