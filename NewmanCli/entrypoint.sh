@@ -1,5 +1,5 @@
 #!/bin/sh
 
-sleep 30s; 
+sleep 2s; 
 
 newman run Newman_collection.json;
