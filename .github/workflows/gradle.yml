@@ -52,7 +52,17 @@ jobs:
             echo "Newman failed."
             exit 1
           fi
-        
+      - name: Show Newman results
+        run: |
+          sleep 25s
+          docker logs newman
+      - name: Check Newman Exit Code
+        run: |
+          if [ $(docker inspect newman --format='{{.State.ExitCode}}') -ne 0 ] 
+          then
+            echo "Newman failed."
+            exit 1
+          fi
       - name: Check if Newman is in endless loop
         run: |
           if [ $(docker ps | grep newman | wc -l) -ne 0 ]
