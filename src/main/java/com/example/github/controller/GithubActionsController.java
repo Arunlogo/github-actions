@@ -17,7 +17,7 @@ public class GithubActionsController {
 	@Autowired
 	Actions actions;
 	
-	@GetMapping("/get")
+	@GetMapping("/gett")
 	public Optional<String> getGreetings() {
 		return Optional.of("Hi, Welcome!!");
 	}
