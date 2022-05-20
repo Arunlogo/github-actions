@@ -39,7 +39,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://githubaction:8080/api/name/get",
+					"raw": "http://localhost/api/name/get",
 					"protocol": "http",
 					"host": [
 						"githubaction"
