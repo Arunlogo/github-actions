@@ -8,12 +8,14 @@ services:
     container_name: githubaction
     ports:
       - 8080:8080
+    network_mode: "host"
   
   newman:
     build: ./NewmanCli
     image: newman
     entrypoint: ["/home/hello_django/entrypoint.sh"]
     container_name: newman
+    network_mode: "host"
     
   
    
