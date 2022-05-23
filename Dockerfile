@@ -8,4 +8,5 @@ RUN ls -lta
 FROM public.ecr.aws/docker/library/amazoncorretto:17-alpine-jdk
 COPY github-actions-0.0.1-SNAPSHOT.jar /app/github-actions-0.0.1-SNAPSHOT.jar
 WORKDIR /app
-ENTRYPOINT ["java","-jar","/github-actions-0.0.1-SNAPSHOT.jar"]
+RUN ls -lta
+ENTRYPOINT ["java","-jar","/app/github-actions-0.0.1-SNAPSHOT.jar"]
