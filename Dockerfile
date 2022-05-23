@@ -1,7 +1,7 @@
 FROM gradle:jdk11 as gradleimage
 COPY . /home/gradle/source
 WORKDIR /home/gradle/source
-RUN gradle build
+RUN ./gradlew bootJar
 
 FROM public.ecr.aws/docker/library/amazoncorretto:17-alpine-jdk
 COPY /home/gradle/source/build/libs/*.jar /app/
