@@ -54,7 +54,7 @@ jobs:
         run: docker network inspect github-actions_default
       - name: Show Newman results
         run: |
-          sleep 25s
+          sleep 60s
           docker logs newman
       - name: Check Newman Exit Code
         run: |
