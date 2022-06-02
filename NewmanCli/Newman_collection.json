@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "b7004548-8b5e-4b4c-afe7-6344014c9bf9",
+		"name": "Newman_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "greetings",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://githubaction:8080/api/name/get",
+					"protocol": "http",
+					"host": [
+						"githubaction"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"name",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rs2Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Payarc_Pass123!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "payarc-test-api",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"type": "any"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://test-soa2.rs2.com:26007/wsm/oauth2/token",
+					"protocol": "http",
+					"host": [
+						"test-soa2",
+						"rs2",
+						"com"
+					],
+					"port": "26007",
+					"path": [
+						"wsm",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
